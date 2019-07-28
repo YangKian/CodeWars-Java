@@ -37,7 +37,7 @@ public class Maximum_subarray_sum {
         int ans = arr[0];
         int sum = arr[0];
         for(int i = 1; i < size; ++i) {
-            sum = sum + arr[i] > arr[i] ? sum + arr[i] : arr[i];
+            sum = Math.max(sum + arr[i], arr[i]);
             if(sum > ans) ans = sum;
         }
         if(ans < 0) ans = 0;
